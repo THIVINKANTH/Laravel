@@ -6,6 +6,6 @@
     <title>Document</title>
 </head>
 <body>
-    <h2>Welcome Thivin</h2>
+    <h2>Welcome {{ $title }}</h2>
 </body>
 </html>

@@ -85,7 +85,7 @@ Route::view('sample-page','page');
 
  //prefix route
 
- Route::prefix('gallery')->middleware()->group(function(){
+ Route::prefix('gallery')->group(function(){
 
     Route::get('photos',function(){
         return "<h2>Photos page</h2>";
@@ -115,3 +115,14 @@ Route::view('sample-page','page');
     }
 
  })->middleware('month');
+
+ Route::get('employee',[App\Http\Controllers\EmpolyeeController::class,'store']);
+
+//  Route::get('update',[App\Http\Controllers\EmployeeController::class,'destroy']);
+
+
+
+
+
+
+
