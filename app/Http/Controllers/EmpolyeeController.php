@@ -13,7 +13,15 @@ class EmpolyeeController extends Controller
      */
     public function index(Request $request)
     {
-        dd($request->all());
+        // $id = $request->input('id');
+        // $name = $request->input('name');
+        // $email = $request->input('email');
+        // $contact = $request->input('contact');
+        // $address = $request->input('address');
+        // DB::table('employee_details')->select($id,$name,$email,$contact,$address)->get($id);
+        // return $id;
+        $users = Empolyee::all()->toArray();
+        print_r($users);
     }
 
     /**
@@ -43,7 +51,8 @@ class EmpolyeeController extends Controller
      */
     public function show(Empolyee $empolyee)
     {
-        // dd($empolyee->all());
+        // $list = $empolyee::all()->toArray();
+        // print_r($list);
     }
 
     /**
@@ -51,7 +60,7 @@ class EmpolyeeController extends Controller
      */
     public function edit(Empolyee $empolyee)
     {
-        $affected = DB::table('employee_details')->where('id',1001)->update(['address' => 'sampalli']);
+        $affected = DB::table('employee_details')->where('id',1001)->update(['salary' => 25000]);
     }
 
     /**
@@ -67,6 +76,6 @@ class EmpolyeeController extends Controller
      */
     public function destroy(Empolyee $empolyee)
     {
-         DB::table('users')->where('id', 1001)->delete();
+         DB::table('employee_details')->where('id', 1006)->delete();
     }
 }

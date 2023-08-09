@@ -116,9 +116,19 @@ Route::view('sample-page','page');
 
  })->middleware('month');
 
+
+ //insert
  Route::get('employee',[App\Http\Controllers\EmpolyeeController::class,'store']);
 
-//  Route::get('update',[App\Http\Controllers\EmployeeController::class,'destroy']);
+ //update
+ Route::get('update',[App\Http\Controllers\EmpolyeeController::class,'edit']);
+
+ //delete
+ Route::get('delete',[App\Http\Controllers\EmpolyeeController::class,'destroy']);
+
+
+//list
+Route::get('list',[App\Http\Controllers\EmpolyeeController::class,'index']);
 
 
 
