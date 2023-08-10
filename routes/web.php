@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\EmployeeController;
+use App\Models\Empolyeedetails;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -133,6 +135,34 @@ Route::get('list',[App\Http\Controllers\EmpolyeeController::class,'index']);
 
 
 
+//passing route parameters
+
+Route::get('pass/{num}',[EmployeeController::class,'display']);
+
+
+
+//blade view
+
+// Route::view('local','layouts.default');
+
+// Route::view('/','hom');
+
+Route::view('/contact','contact');
+
+
+//condition statement in blade
+
+Route::get('/', function ()
+ {
+    $heading = "This is a New Home Page";
+    $no_of_users = 1;
+    $is_user_online = 0;
+    $settings = 'user settings';
+    $names = ['thivin','praveen','Raj'];
+
+    $namesmulti = [['name' => 'thivin'],['name' => 'praveen']];
+    return view('hom',compact('heading','no_of_users','is_user_online','settings','names','namesmulti'));
+});
 
 
 

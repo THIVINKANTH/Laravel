@@ -19,4 +19,26 @@ class EmployeeController extends Controller
         // print_r($users);
         return view('home',compact('users','title'));
     }
+
+    // middleware
+
+    public function __construct()
+    {
+        $this->middleware('month');
+    }
+
+    public function display($num)
+    {
+        if($num == 1)
+        {
+            return "<h2>JANUARY</h2>";
+        }
+        elseif ($num == 2) {
+            return "<h2>FEBRUARY</h2>";
+        }
+        elseif ($num == 3) {
+            # code...
+            return "<h2>MARCH</h2>";
+        }
+    }
 }
